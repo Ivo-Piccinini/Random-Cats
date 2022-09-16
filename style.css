@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: #C6EBC5;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Kanit';
+    width: 317px;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #467144;
+    border-bottom: solid #467144 4px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    /* background-color: #FBF2CF; */
+    width: 60%;
+
+    margin: 0 auto;
+}
+
+.cat-img {
+    width: 50%;
+    height: 30%;
+    border: solid #a7c37b 20px;
+    border-radius: 10px;
+    max-height: 650px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.next-cat {
+    width: 110px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #CFE8A9;
+    border: solid #467144 2px;
+    border-radius: 10px;
+    color: #467144;
+    font-weight: 700;
+    font-size: 17px;
+    padding-top: 1px;
+    margin-bottom: 20px;
+}
+
+.next-cat:hover {
+    background-color: #b5d189;
+    border: solid #467144 3px;
+}
+
+footer {
+    position: relative;
+    bottom: 100%;
+    width: 100%;
+    height: 60px;
+    background-color: #467144;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-p {
+    display: flex;
+    justify-content: flex-end;
+    color: #CFE8A9;
+
+}
+
+.container-p p {
+    position: absolute;
+    margin-right: 10px;
+    font-size: 23px;
+    top: 18px;
+}
+
+.container-git {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-git img {
+    color: #CFE8A9;
+    width: 45px;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.container-git a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-git a p {
+    font-size: 22px;
+    margin-top: 19px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width:1104px) {
+
+    .cat-img {
+        position:relative;
+        width: 70%;
+        /* width: 50%;
+        height: 30%;
+        border: solid #a7c37b 20px;
+        border-radius: 10px;*/
+        max-width: 300px;
+        margin: 0 auto;
+        /* max-height: 650px;  */
+    }
+}
+@media screen and (max-width:734px) {
+    .cat-img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:506px) {
+    .cat-img {
+        width: 120%;
+    }
+    .title-container {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:372px) {
+    .container-p p {
+        font-size: 18px;
+        margin-top: 2px;
+    }
+}
