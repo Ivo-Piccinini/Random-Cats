@@ -5,35 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Cats</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./favorites.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');</style>
 </head>
 <body>
 
     <header>
-        <a class="fav-section-container" href="./favorites/favorites.html">
-            <img class="fav-section" src="./img/1f49a.png" alt="">
+        <a class="return-home" href="../index.html">
+            <img class="return-button" src="../img/return-left-logo-icon-png-svg.png" alt="Return to Principal page">
         </a>
     </header>
-
-    <div class="title-container">
-        <h1 class="title">Random Cats</h1>
-    </div>
     
-
-    <section id="randomCats">
+    <section id="favoritesCats">
+        <h2 class="favorite-title">Favorites</h2>
         <article>
-            <div class="img-container">
-                <img id="rc" class="cat-img" alt="Foto de gatito aleatoria">
-            </div>
+            <img id="img1" width="150" alt="Foto de gatito aleatorio">
+            <button>Sacar de favoritos</button>
         </article>
-
-        <div class="button-container">
-            <button class="next-cat" onclick="reload()">CAT</button>
-            <button class="fav-button">FAVORITES</button>
-        </div>
     </section>
-    
     
     <footer>
         <div class="container-p">
@@ -41,7 +30,7 @@
         </div>
         <div class="container-git">
             <a href="https://github.com/Ivo-Piccinini">
-                <img src="./img/25231.png" alt="">
+                <img src="../img/25231.png" alt="">
             </a>
             <a href="https://github.com/Ivo-Piccinini">
                 <p>Github</p>

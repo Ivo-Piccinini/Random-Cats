@@ -4,7 +4,7 @@ async function reload() {
     const res = await fetch(API);
     const data = await res.json();
 
-    const img = document.querySelector('img')
+    const img = document.getElementById('rc')
     img.src = data[0].url;
 }
 
