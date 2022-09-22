@@ -30,14 +30,19 @@ async function loadFavouritesCats() {
             const article = document.createElement('article');
             const img = document.createElement('img');
             const btn = document.createElement('button');
-            const btnText = document.createTextNode('remove');
+            const btnText = document.createTextNode('REMOVE');
 
-            img.width = 150;
+            img.width = 200;
+            img.height = 150;
             img.src = cat.image.url;
             btn.appendChild(btnText);
             article.appendChild(img);
             article.appendChild(btn);
             section.appendChild(article);
+
+            article.classList.add('img-fav-container');
+            img.classList.add('img-fav');
+            btn.classList.add('btn-remove');
         })
     }
 }
