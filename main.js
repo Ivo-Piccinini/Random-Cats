@@ -1,5 +1,6 @@
 const API_RANDOM = 'https://api.thecatapi.com/v1/images/search';
 const API_FAVOURITES = 'https://api.thecatapi.com/v1/favourites?api_key=live_4Ty4qaAc0dMSZes835g54DX2wIrQ5lJ1FYRp8lFJI7mtnsfa6kniMhyHZRacacAT';
+const API_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_4Ty4qaAc0dMSZes835g54DX2wIrQ5lJ1FYRp8lFJI7mtnsfa6kniMhyHZRacacAT`;
 const spanError = document.getElementById('error');
 
 async function loadRandomCats() {
@@ -25,8 +26,10 @@ async function loadFavouritesCats() {
     if(res.status !== 200) {
         spanError.innerHTML = "Hubo un error: " + res.status + data.message;
     }else {
+        const section = document.getElementById('favoritesCats');
+        section.innerHTML = "";
+
         data.forEach(cat => {
-            const section = document.getElementById('favoritesCats');
             const article = document.createElement('article');
             const img = document.createElement('img');
             const btn = document.createElement('button');
@@ -36,6 +39,7 @@ async function loadFavouritesCats() {
             img.height = 150;
             img.src = cat.image.url;
             btn.appendChild(btnText);
+            btn.onclick = () => deleteFavouriteCat(cat.id);
             article.appendChild(img);
             article.appendChild(btn);
             section.appendChild(article);
@@ -59,13 +63,27 @@ async function saveFavouriteCat(id) {
     })
     const data = await res.json();
 
-    console.log(res);
-
     if(res.status !== 200) {
         spanError.innerHTML = "Hubo un error: " + res.status + data.message;
+    } else {
+        console.log('The cat has been saved successfully');
+        loadRandomCats();
+    }
+}
+
+async function deleteFavouriteCat(id) {
+    const res = await fetch(API_DELETE(id), {
+        method: 'DELETE',
+    });
+    const data = await res.json();
+
+    if (res.status !== 200) {
+        spanError.innerHTML = 'An error has been detected: ' + res.status + data.message;
+    } else {
+        console.log('The cat has been deleted successfully');
+        loadFavouritesCats();
     }
 }
 
 loadRandomCats();
-saveFavouriteCat();
 loadFavouritesCats();
