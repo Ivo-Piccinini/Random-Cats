@@ -8,6 +8,12 @@ html {
     font-size: 62.5%;
     background-color: #C6EBC5;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
 }
 
 header {
@@ -48,6 +54,7 @@ header {
     flex-flow: wrap;
     margin: 0 auto;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 #favoritesCats .img-fav-container {
@@ -89,9 +96,8 @@ header {
 }
 
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
-    bottom: 100%;
     width: 100%;
     height: 60px;
     background-color: #467144;
