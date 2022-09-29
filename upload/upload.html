@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Cats</title>
-    <link rel="stylesheet" href="./favorites.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');</style>
+    <link rel="stylesheet" href="./upload.css">
+    <title>Upload section</title>
 </head>
 <body>
-
     <header>
-        <a class="upload-section-container" href="../upload/upload.html">
-            <img class="upload-section" src="../img/Upload-PNG-Clipart.png" alt="">
+        <a class="fav-section-container" href="../favorites/favorites.html">
+            <img class="fav-section" src="../img/1f49a.png" alt="">
         </a>
 
         <a class="return-home" href="../index.html">
@@ -20,13 +18,18 @@
         </a>
     </header>
     
+    <section id="uploadingCat">
+        <h2 class="upload-title">Upload a photo of your cat</h2>
 
-    <div class="title-favorite-container">
-        <h2 class="favorite-title">Favourites</h2>
-    </div>
-
-    <section id="favoritesCats">
-
+        <form id="uploadingForm">
+            <div class="file-select">
+                <p id="text">Select File</p>
+                <input id="file" class="input-file" type="file" name="file" onchange="previewImage()">
+            </div>
+            <img id="preview">
+            <button class="invisible" id="submitCat" type="button" onclick="uploadCatPhoto()">SUBMIT</button>
+            <h2 id="saved-msg"></h2>
+        </form>
     </section>
     
     <footer>

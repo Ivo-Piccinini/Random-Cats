@@ -1,6 +1,8 @@
 const API_RANDOM = 'https://api.thecatapi.com/v1/images/search';
 const API_FAVOURITES = 'https://api.thecatapi.com/v1/favourites';
 const API_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}`;
+const API_UPLOAD = 'https://api.thecatapi.com/v1/images/upload';
+
 const spanError = document.getElementById('error');
 
 async function loadRandomCats() {
@@ -91,6 +93,49 @@ async function deleteFavouriteCat(id) {
     } else {
         console.log('The cat has been deleted successfully');
         loadFavouritesCats();
+    }
+}
+
+async function uploadCatPhoto() {
+    const form = document.getElementById('uploadingForm');
+    const formData = new FormData(form);
+    const msg = document.getElementById('saved-msg');
+
+    console.log(formData.get('file'));
+
+    const res = await fetch(API_UPLOAD, {
+        method: 'POST',
+        headers: {
+            // 'Content-Type': 'multipart/form-data',
+            'X-API-KEY': 'live_4Ty4qaAc0dMSZes835g54DX2wIrQ5lJ1FYRp8lFJI7mtnsfa6kniMhyHZRacacAT',
+        },
+        body: formData,
+    })
+    const data = await res.json();
+
+    if (res.status !== 201) {
+        spanError.innerHTML = "An error has been detected: " + res.status + data.message
+    } else {
+        console.log("The cat has been uploaded successfully");
+        msg.innerHTML = "¡The cat has been saved in the favorites section!";
+        saveFavouriteCat(data.id);
+    }
+}
+
+const previewImage = () => {
+    const file = document.getElementById('file').files;
+    const submit = document.getElementById('submitCat');
+
+    if(file.length > 0) {
+        const fileReader = new FileReader();
+
+        fileReader.onload = function(e) {
+            document.getElementById('preview').setAttribute('src', e.target.result);
+        };
+
+        fileReader.readAsDataURL(file[0]);
+
+        submit.classList.remove('invisible');
     }
 }
 

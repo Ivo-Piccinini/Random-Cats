@@ -8,6 +8,12 @@ html {
     font-size: 62.5%;
     background-color: #C6EBC5;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
 }
 
 header {
@@ -16,6 +22,19 @@ header {
     height: 50px;
     background-color: #467144;
     justify-content: flex-end;
+    flex-direction: row;
+}
+
+.upload-section-container {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    margin-top: 7px;
+}
+
+.upload-section {
+    width: 100%;
+    height: 100%;
 }
 
 .fav-section-container {
@@ -53,7 +72,6 @@ header {
     margin-top: 40px;
     /* background-color: #FBF2CF; */
     width: 60%;
-
     margin: 0 auto;
 }
 
@@ -62,7 +80,7 @@ header {
     height: 30%;
     border: solid #a7c37b 20px;
     border-radius: 10px;
-    max-height: 650px;
+    max-height: 600px;
 }
 
 .button-container {
@@ -112,12 +130,10 @@ header {
 }
 
 footer {
-    position: relative;
-    bottom: 100%;
+    position: absolute;
     width: 100%;
     height: 60px;
     background-color: #467144;
-    position: absolute;
     bottom: 0;
 }
 
